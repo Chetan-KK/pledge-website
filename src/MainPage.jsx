@@ -48,7 +48,7 @@ const MainPage = () => {
         -- TAKE A PLEDGE --
       </h1>
       <h1 className="font-bold text-3xl text-center text-gray-800 mt-10">
-        Peace and Addiction Pledge
+        Pledge for Peace and Addiction
       </h1>
       <div className="flex justify-center items-center mt-9 font-bold">
         <p className="w-[95vw] sm:w-[70vw] text-sm sm:text-xl leading-6 sm:leading-10 border-4 border-gray-100 p-3 rounded-xl shadow-2xl h-[30rem] overflow-y-scroll">
