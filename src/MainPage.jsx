@@ -10,7 +10,8 @@ const MainPage = () => {
   const [factive, setfActive] = useState(false);
 
   const getData = () => {
-    counter.get("pledgeCountAdypu").then((res) => {
+    counter.get("pledgeCountAdypu", "pledgeCountAdypu").then((res) => {
+      console.log(res);
       setMainCount(res.Count);
     });
   };
@@ -20,11 +21,10 @@ const MainPage = () => {
   }, []);
 
   function HandleClick() {
-    setMainCount((prev) => prev + 1);
     setfActive(true);
     setActive(false);
-    counter.up("pledgeCountAdypu", "pledgeCountAdypu").then((res) => {
-      res;
+    counter.up("pledgeCountAdypu", "pledgeCountAdypu").then(() => {
+      setMainCount((prev) => prev + 1);
     });
   }
 

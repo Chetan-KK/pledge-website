@@ -5,7 +5,7 @@ const Home = () => {
   const counter = new CounterAPI();
   const [mainCount, setMainCount] = useState(0);
   const getData = () => {
-    counter.get("pledgeCountAdypu").then((res) => {
+    counter.get("pledgeCountAdypu", "pledgeCountAdypu").then((res) => {
       setMainCount(res.Count);
     });
   };
@@ -15,7 +15,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-sky-200 h-full">
+    <div className="bg-sky-200 h-full min-h-screen flex flex-col justify-between">
       <header className="h-24 sm:h-32">
         <img
           src="/cloud-bg.png"
