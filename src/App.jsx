@@ -9,9 +9,10 @@ function App() {
   const [active, setActive] = useState(false);
   const [factive, setfActive] = useState(false);
 
-  const getData = async () => {
-    let val = await counter.get();
-    setMainCount(val.Count);
+  const getData = () => {
+    counter.get("pledgeCountAdypu").then((res) => {
+      setMainCount(res.Count);
+    });
   };
 
   useEffect(() => {
@@ -22,7 +23,7 @@ function App() {
     setMainCount((prev) => prev + 1);
     setfActive(true);
     setActive(false);
-    counter.up().then((res) => {
+    counter.up("pledgeCountAdypu", "pledgeCountAdypu").then((res) => {
       res;
     });
   }
@@ -92,7 +93,7 @@ function App() {
             }}
           >
             <input type="checkbox" checked={active} id="tick" />
-            <label htmlFor="" className="bg-red-900">
+            <label htmlFor="" className="">
               I read full pledge
             </label>
           </div>
