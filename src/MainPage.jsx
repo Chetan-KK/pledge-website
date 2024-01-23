@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { CounterAPI } from "counterapi";
+import { Link } from "react-router-dom";
 
 const MainPage = () => {
   const counter = new CounterAPI();
@@ -10,7 +11,7 @@ const MainPage = () => {
   const [factive, setfActive] = useState(false);
 
   const getData = () => {
-    counter.get("pledgeCountAdypu", "pledgeCountAdypu").then((res) => {
+    counter.get("pledgeCountAdypuSoe", "pledgeCountAdypuSoe").then((res) => {
       console.log(res);
       setMainCount(res.Count);
     });
@@ -23,7 +24,7 @@ const MainPage = () => {
   function HandleClick() {
     setfActive(true);
     setActive(false);
-    counter.up("pledgeCountAdypu", "pledgeCountAdypu").then(() => {
+    counter.up("pledgeCountAdypuSoe", "pledgeCountAdypuSoe").then(() => {
       setMainCount((prev) => prev + 1);
     });
   }
@@ -48,10 +49,11 @@ const MainPage = () => {
         -- TAKE A PLEDGE --
       </h1>
       <h1 className="font-bold text-3xl text-center text-gray-800 mt-10">
-        Pledge for Peace and Addiction
+        Pledge for Peace and De Addiction
       </h1>
-      <div className="flex justify-center items-center mt-9 font-bold">
+      <div className="flex justify-center items-center mt-9">
         <p className="w-[95vw] sm:w-[70vw] text-sm sm:text-xl leading-6 sm:leading-10 border-4 border-gray-100 p-3 rounded-xl shadow-2xl h-[30rem] overflow-y-scroll">
+          <span className="font-bold">Peace Pledge</span> <br />
           I hereby pledge to make Peace & Conflict Resolution a part of my
           everyday life and I will constantly strive to … <br /> Help not hurt,
           create not destroy. <br /> Show gratitude. <br /> Be aware of my
@@ -62,12 +64,13 @@ const MainPage = () => {
           compassion. <br /> I understand and own the responsibility to make my
           surroundings peaceful & with conflicts resolved amicably.
           <br />
-          De Addiction Pledge <br /> I take this pledge that I will never use
-          any addiction under peer pressure or under any circumstances in my
-          life, and I will try my best to save my family, friends and society
-          from addictions including social media addiction. <br /> For the sake
-          of future generations and for the secure future of my country, I
-          pledge not to become victim of any addictions.
+          <span className="font-bold">De Addiction Pledge</span> <br /> I take
+          this pledge that I will never use any addiction under peer pressure or
+          under any circumstances in my life, and I will try my best to save my
+          family, friends and society from addictions including social media
+          addiction. <br /> For the sake of future generations and for the
+          secure future of my country, I pledge not to become victim of any
+          addictions.
         </p>
       </div>
       <div className="flex justify-center items-center mt-4">
@@ -100,16 +103,23 @@ const MainPage = () => {
         Loading…
       </iframe>
       <div className="flex justify-center items-center flex-col  mt-4">
-        <button
-          onClick={HandleClick}
-          className={`${
-            active
-              ? "bg-blue-600 py-2 rounded-md m-3 text-white hover:bg-blue-800 px-4 "
-              : "bg-blue-300 pointer-events-none py-2 rounded-md m-3 text-white hover:bg-blue-800 px-4"
-          }`}
-        >
-          submit
-        </button>
+        <Link to={"/thankyou"}>
+          <button
+            onClick={HandleClick}
+            className={`${
+              active
+                ? "bg-blue-600 py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4 "
+                : "bg-blue-300 pointer-events-none py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4"
+            }`}
+          >
+            submit
+          </button>
+        </Link>
+        {active ? undefined : (
+          <h1 className="text-sm text-red-600 font-bold">
+            please tick i read option
+          </h1>
+        )}
       </div>
       <footer className="flex justify-around items-center p-5 bg-blue-300">
         <b>&copy; adypu</b>
