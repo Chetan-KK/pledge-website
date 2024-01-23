@@ -62,12 +62,12 @@ const MainPage = () => {
           compassion. <br /> I understand and own the responsibility to make my
           surroundings peaceful & with conflicts resolved amicably.
           <br />
-          De Addiction Pledge I take this pledge that I will never use any
-          addiction under peer pressure or under any circumstances in my life,
-          and I will try my best to save my family, friends and society from
-          addictions including social media addiction. For the sake of future
-          generations and for the secure future of my country, I pledge not to
-          become victim of any addictions.
+          De Addiction Pledge <br /> I take this pledge that I will never use
+          any addiction under peer pressure or under any circumstances in my
+          life, and I will try my best to save my family, friends and society
+          from addictions including social media addiction. <br /> For the sake
+          of future generations and for the secure future of my country, I
+          pledge not to become victim of any addictions.
         </p>
       </div>
       <div className="flex justify-center items-center mt-4">
