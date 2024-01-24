@@ -103,18 +103,24 @@ const MainPage = () => {
         Loading…
       </iframe>
       <div className="flex justify-center items-center flex-col  mt-4">
-        <Link to={"/thankyou"}>
+        {active ? (
+          <Link to={"/thankyou"}>
+            <button
+              onClick={HandleClick}
+              className={`${"bg-blue-600 py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4 "}`}
+            >
+              submit
+            </button>
+          </Link>
+        ) : (
           <button
             onClick={HandleClick}
-            className={`${
-              active
-                ? "bg-blue-600 py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4 "
-                : "bg-blue-300 pointer-events-none py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4"
-            }`}
+            className={`${"bg-blue-300 pointer-events-none py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4"}`}
           >
             submit
           </button>
-        </Link>
+        )}
+
         {active ? undefined : (
           <h1 className="text-sm text-red-600 font-bold">
             please tick i read option
