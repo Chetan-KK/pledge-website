@@ -31,12 +31,22 @@ const MainPage = () => {
 
   return (
     <div className="bg-sky-200 h-full">
-      <header className="h-24 sm:h-32">
-        <img
-          src="/logo.png"
-          className="absolute w-full md:px-56 px-4 md:py-0"
-          alt=""
-        />
+      <header className="">
+        <div className="Header flex">
+          <div className="clg_logo_wrapper">
+            <img src={"/CLG_Logo.png"} className="clg_logo" alt="" />
+          </div>
+          <div className="titles">
+            <div className="top flex items-end">
+              <div className="mainTitle">Ajeenkya</div>
+              <div className="mainHeading">DY Patil School of Engineering</div>
+            </div>
+            <div className="sub-heading">
+              Approved by AICTE, Recognized by Govt. of Maharashtra, Affiliated
+              to Savitribai Phule Pune University
+            </div>
+          </div>
+        </div>
       </header>
       <div className="w-full my-5 md:h-[70vh] overflow-hidden flex items-center justify-center">
         <img
@@ -128,7 +138,7 @@ const MainPage = () => {
         )}
       </div>
       <footer className="flex justify-around items-center p-5 bg-blue-300">
-        <b>&copy; adypu</b>
+        <b>&copy; adypsoe, lohegaon, pune.</b>
         <b>Total pledge count: {mainCount}</b>
       </footer>
     </div>
