@@ -42,7 +42,7 @@ const MainPage = () => {
               <div className="mainHeading">DY Patil School of Engineering</div>
             </div>
             <div className="sub-heading">
-              {`Adypsoe in association with "Rotary District 3131, Peace Building and Conflict Resolution Avenue"`}
+              {`in association with "Rotary District 3131, Peace Building and Conflict Resolution Avenue"`}
             </div>
           </div>
         </div>
