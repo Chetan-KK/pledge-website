@@ -33,15 +33,15 @@ const MainPage = () => {
     <div className="bg-sky-200 h-full">
       <header className="h-24 sm:h-32">
         <img
-          src="/cloud-bg.png"
-          className="absolute w-full md:px-56 px-4 pt-4 md:py-11"
+          src="/logo.png"
+          className="absolute w-full md:px-56 px-4 md:py-0"
           alt=""
         />
       </header>
-      <div className="w-full mb-5 md:h-[70vh] overflow-hidden flex items-center justify-center">
+      <div className="w-full my-5 md:h-[70vh] overflow-hidden flex items-center justify-center">
         <img
-          src="/main.jpg"
-          className="sm:w-[50vw] sm:rounded-md shadow-lg"
+          src="/main.png"
+          className="sm:w-[70vw] sm:rounded-md shadow-lg"
           alt=""
         />
       </div>
