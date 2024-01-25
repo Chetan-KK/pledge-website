@@ -27,8 +27,7 @@ const Home = () => {
               <div className="mainHeading">DY Patil School of Engineering</div>
             </div>
             <div className="sub-heading">
-              Approved by AICTE, Recognized by Govt. of Maharashtra, Affiliated
-              to Savitribai Phule Pune University
+              {`Adypsoe in association with "Rotary District 3131, Peace Building and Conflict Resolution Avenue"`}
             </div>
           </div>
         </div>

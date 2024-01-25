@@ -74,11 +74,10 @@
     font-size: 0.8rem;
   }
   .Header .sub-heading {
-    display: none;
   }
 }
 @media screen and (max-width: 720px) {
   .Header .titles .top {
-    display: block;
+    align-items: center;
   }
 }
