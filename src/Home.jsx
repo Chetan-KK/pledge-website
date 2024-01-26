@@ -5,9 +5,11 @@ const Home = () => {
   const counter = new CounterAPI();
   const [mainCount, setMainCount] = useState(0);
   const getData = () => {
-    counter.get("pledgeCountAdypuSoe", "pledgeCountAdypuSoe").then((res) => {
-      setMainCount(res.Count);
-    });
+    counter
+      .get("pledgeCounterAdypuSoe", "pledgeCounterAdypuSoe")
+      .then((res) => {
+        setMainCount(res.Count);
+      });
   };
 
   useEffect(() => {
@@ -17,9 +19,9 @@ const Home = () => {
   return (
     <div className="bg-sky-200 h-full min-h-screen flex flex-col justify-between">
       {/*  */}
-      <div className="flex text-white font-bold bg-black fixed z-40 justify-center items-center top-0 left-0 h-screen w-screen">
+      {/* <div className="flex text-white font-bold bg-black fixed z-40 justify-center items-center top-0 left-0 h-screen w-screen">
         Link will open on 26/01/2024 at 8am
-      </div>
+      </div> */}
       {/*  */}
       <header className="">
         <div className="Header flex">

@@ -9,12 +9,15 @@ const MainPage = () => {
 
   const [active, setActive] = useState(false);
   const [factive, setfActive] = useState(false);
+  const [formLoad, setFormLoad] = useState(false);
 
   const getData = () => {
-    counter.get("pledgeCountAdypuSoe", "pledgeCountAdypuSoe").then((res) => {
-      console.log(res);
-      setMainCount(res.Count);
-    });
+    counter
+      .get("pledgeCounterAdypuSoe", "pledgeCounterAdypuSoe")
+      .then((res) => {
+        console.log(res);
+        setMainCount(res.Count);
+      });
   };
 
   useEffect(() => {
@@ -24,9 +27,13 @@ const MainPage = () => {
   function HandleClick() {
     setfActive(true);
     setActive(false);
-    counter.up("pledgeCountAdypuSoe", "pledgeCountAdypuSoe").then(() => {
+    counter.up("pledgeCounterAdypuSoe", "pledgeCounterAdypuSoe").then(() => {
       setMainCount((prev) => prev + 1);
     });
+  }
+
+  function handleLoad() {
+    setFormLoad(true);
   }
 
   return (
@@ -108,6 +115,7 @@ const MainPage = () => {
         src="https://docs.google.com/forms/d/e/1FAIpQLSc3saF6xgpwtviMawrdM6AV9jPxbdABWbqhbEANZhP8FoB8Uw/viewform?embedded=true"
         className="w-full h-[100vh] mt-12"
         frameBorder="0"
+        onLoad={handleLoad}
       >
         Loading…
       </iframe>
@@ -116,9 +124,11 @@ const MainPage = () => {
           <Link to={"/thankyou"}>
             <button
               onClick={HandleClick}
-              className={`${"bg-blue-600 py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4 "}`}
+              className={`${"bg-blue-600 py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4 "} ${
+                formLoad ? "" : "pointer-events-none bg-blue-300"
+              }`}
             >
-              submit
+              {formLoad ? "Submit" : "please wait..."}
             </button>
           </Link>
         ) : (
@@ -126,7 +136,7 @@ const MainPage = () => {
             onClick={HandleClick}
             className={`${"bg-blue-300 pointer-events-none py-2 rounded-md m-3 mb-1 text-white hover:bg-blue-800 px-4"}`}
           >
-            submit
+            {formLoad ? "Submit" : "please wait..."}
           </button>
         )}
 
